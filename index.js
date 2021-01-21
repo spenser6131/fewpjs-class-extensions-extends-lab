@@ -14,6 +14,9 @@ class Polygon {
 
 class Triangle extends Polygon {
   get isValid() {
+    if (this.countSides !== 3) {
+      return false;
+    }
     let [a,b,c] = this.sides;
     let ab = a + b;
     let ac = a + c;
@@ -32,6 +35,9 @@ class Square extends Polygon {
   }
 
   get isValid() {
+    if (this.countSides !== 4) {
+      return false;
+    }
     let [a,b,c,d] = this.sides;
     if (a === b && a === c && a === d) {
       return true;
